@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "109770323323",
+    "firebase_url": "https://smart-irrigation-iot-project-default-rtdb.firebaseio.com",
+    "project_id": "smart-irrigation-iot-project",
+    "storage_bucket": "smart-irrigation-iot-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109770323323:android:695e0a0db3d5c1916639de",
+        "android_client_info": {
+          "package_name": "com.rexmo.smartagriculture"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "109770323323-8an0ids8hrfih4e6q6rb8tv72vn5fd5b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rexmo.smartagriculture",
+            "certificate_hash": "1636299656fc417a8ffff356d8ffd377d511f69e"
+          }
+        },
+        {
+          "client_id": "109770323323-rafr96h92kq7fnqb1kpd3pglasv06o9v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAI25IFczoYdzUAyJ2TRykBbfqljXdyMNk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "109770323323-rafr96h92kq7fnqb1kpd3pglasv06o9v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
