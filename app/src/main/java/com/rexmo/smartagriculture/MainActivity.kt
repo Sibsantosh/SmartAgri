@@ -33,8 +33,8 @@ class MainActivity : AppCompatActivity() {
             uploadEmployeeData()
 
         }
-        btnFetch.setOnClickListener {
-            loadData()
+        btn.setOnClickListener {
+           loadData()
 
         }
     }
