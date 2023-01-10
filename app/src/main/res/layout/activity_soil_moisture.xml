@@ -41,8 +41,94 @@
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonFetchMoisture" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonFetchMoisture"
+        app:layout_constraintVertical_bias="0.192" />
+
+    <LinearLayout
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/halfGauge"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="12">
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="144dp"
+            android:layout_height="164dp"
+            app:cardBackgroundColor="#F4F7FB"
+            app:cardCornerRadius="22dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/humidity_png"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Inside Humidity"
+                    android:textSize="15sp"
+                    />
+
+                <TextView
+                    android:layout_width="44dp"
+                    android:layout_height="22dp"
+                    android:text="49%"
+                    android:textSize="17sp"
+                    />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="0dp"/>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="144dp"
+            android:layout_height="164dp"
+            app:cardBackgroundColor="#F4F7FB"
+            app:cardCornerRadius="22dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
