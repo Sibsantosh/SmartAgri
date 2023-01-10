@@ -72,26 +72,31 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="20dp"
-                android:gravity="center">
+                android:gravity="center_horizontal">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/humidity_png"/>
+                    android:src="@drawable/humidity_png"
+                    android:layout_gravity="center"
+                    android:paddingBottom="20dp"/>
 
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Inside Humidity"
+                    android:text="Soil Moisture"
                     android:textSize="15sp"
+                    android:gravity="center"
                     />
 
                 <TextView
+                    android:id="@+id/cdTvMoisture"
                     android:layout_width="44dp"
                     android:layout_height="22dp"
                     android:text="49%"
                     android:textSize="17sp"
+                    android:gravity="center"
                     />
 
             </LinearLayout>

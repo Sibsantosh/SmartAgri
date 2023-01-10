@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.ekn.gruzer.gaugelibrary.HalfGauge
 import com.ekn.gruzer.gaugelibrary.Range
@@ -14,6 +15,7 @@ import com.rexmo.smartagriculture.R
 
 class SoilMoisture : AppCompatActivity() {
     private lateinit var etMoisture: EditText
+    private lateinit var cdTvMoisture: TextView
     private lateinit var btn: Button
     lateinit var dRef: DatabaseReference
     var moisture=ArrayList<MoistureLevel>()
@@ -31,6 +33,7 @@ class SoilMoisture : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_soil_moisture)
         etMoisture=findViewById(R.id.etMoisture)
+        cdTvMoisture = findViewById(R.id.cdTvMoisture)
         btn=findViewById(R.id.buttonFetchMoisture)
         halfGauge=findViewById(R.id.halfGauge)
         dRef=FirebaseDatabase.getInstance().getReference("IOT")
@@ -97,6 +100,7 @@ class SoilMoisture : AppCompatActivity() {
         val k= m?.minus(min)?.times(100)?.div(diff)
         val f=100- k!!
         etMoisture.setText("soil moisture is $f%")
+        cdTvMoisture.text = "$f%"
         halfGauge.value= f.toDouble()
         
     }
