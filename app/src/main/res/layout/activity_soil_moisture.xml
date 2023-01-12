@@ -16,23 +16,22 @@
         android:text="moisture is 0%"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062" />
-
-
+        app:layout_constraintVertical_bias="0.023" />
 
     <Button
         android:id="@+id/buttonFetchMoisture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Click"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etMoisture"
-        app:layout_constraintVertical_bias="0.158" />
+        app:layout_constraintVertical_bias="0.035" />
 
     <com.ekn.gruzer.gaugelibrary.HalfGauge
         android:id="@+id/halfGauge"
@@ -44,14 +43,31 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonFetchMoisture"
-        app:layout_constraintVertical_bias="0.192" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ProgressBar
+        android:id="@+id/progressbarExercise"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="100dp"
+        android:layout_height="93dp"
+        android:layout_gravity="center"
+        android:background="@drawable/circular_progress_gray"
+        android:indeterminate="false"
+        android:max="30"
+        android:progress="300"
+        android:progressDrawable="@drawable/circular_progress_bar"
+        android:rotation="-90"
+        app:layout_constraintTop_toBottomOf="@+id/halfGauge"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/cardView"/>
 
     <LinearLayout
         android:id="@+id/cardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/halfGauge"
+        app:layout_constraintTop_toBottomOf="@+id/progressbarExercise"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -118,11 +134,34 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/temp_png"
+                    android:layout_gravity="center"
+                    android:paddingBottom="20dp"/>
 
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Tempreature"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    />
 
-
+                <TextView
+                    android:id="@+id/cdTvTemperature"
+                    android:layout_width="44dp"
+                    android:layout_height="22dp"
+                    android:text="10°"
+                    android:textSize="17sp"
+                    android:gravity="center"
+                    />
 
             </LinearLayout>
 
