@@ -7,16 +7,15 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import com.ekn.gruzer.gaugelibrary.HalfGauge
 import com.ekn.gruzer.gaugelibrary.Range
 import com.google.firebase.database.*
 import com.rexmo.smartagriculture.EmployeeModel
 import com.rexmo.smartagriculture.R
+import com.rexmo.smartagriculture.databinding.ActivitySoilMoistureBinding
 
 class SoilMoisture : AppCompatActivity() {
-    private lateinit var etMoisture: EditText
-    private lateinit var cdTvMoisture: TextView
-    private lateinit var btn: Button
     lateinit var dRef: DatabaseReference
     var moisture=ArrayList<MoistureLevel>()
     //var s:String=""
@@ -25,19 +24,21 @@ class SoilMoisture : AppCompatActivity() {
     val max=120
     val diff=max-min
     private lateinit var halfGauge:HalfGauge
+    private lateinit var binding:ActivitySoilMoistureBinding
     private val range = Range()
    // com.ekn.gruzer.gaugelibrary.Range
     
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_soil_moisture)
-        etMoisture=findViewById(R.id.etMoisture)
-        cdTvMoisture = findViewById(R.id.cdTvMoisture)
-        btn=findViewById(R.id.buttonFetchMoisture)
+        binding=DataBindingUtil.
+        setContentView(this,R.layout.activity_soil_moisture)
+        //etMoisture=findViewById(R.id.etMoisture)
+        //cdTvMoisture = findViewById(R.id.cdTvMoisture)
+        //btn=findViewById(R.id.buttonFetchMoisture)
         halfGauge=findViewById(R.id.halfGauge)
         dRef=FirebaseDatabase.getInstance().getReference("IOT")
-        btn.setOnClickListener {
+        binding.buttonFetchMoisture.setOnClickListener {
             loadData()
             //halfGauge.value=40.56
 
@@ -103,8 +104,8 @@ class SoilMoisture : AppCompatActivity() {
         //val k= ((m?.minus(min))?.times(100) ?:100 ) /diff
         val k= m?.minus(min)?.times(100)?.div(diff)
         val f=100- k!!
-        etMoisture.setText("soil moisture is $f%")
-        cdTvMoisture.text = "$f%"
+        binding.etMoisture.setText("soil moisture is $f%")
+        //cdTvMoisture.text = "$f%"
         halfGauge.value= f.toDouble()
         
     }
