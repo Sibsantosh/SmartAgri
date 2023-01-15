@@ -34,7 +34,11 @@ class SoilMoisture : AppCompatActivity() {
         btn=findViewById(R.id.buttonFetchMoisture)
         halfGauge=findViewById(R.id.halfGauge)
         dRef=FirebaseDatabase.getInstance().getReference("IOT")
-        btn.setOnClickListener { loadData() }
+        btn.setOnClickListener {
+            loadData()
+            //halfGauge.value=40.56
+
+        }
 
         //for the meter gauge
 
