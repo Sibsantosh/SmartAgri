@@ -1,49 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".soilMoistureActivity.SoilMoisture">
+    tools:context=".soilMoistureActivity.SoilMoisture"
+    android:theme="@style/Base.Theme.Neumorph.Light"
+    android:background="@color/white">
+<!--    "#1E1E2C"-->
 
 
-    <EditText
-        android:id="@+id/etMoisture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="moisture is 0%"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062" />
-
-
-
-    <Button
-        android:id="@+id/buttonFetchMoisture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etMoisture"
-        app:layout_constraintVertical_bias="0.158" />
-
-    <com.ekn.gruzer.gaugelibrary.HalfGauge
-        android:id="@+id/halfGauge"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="300dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonFetchMoisture" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_rectangle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.ekn.gruzer.gaugelibrary.HalfGauge
+                android:id="@+id/halfGauge"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+<!--                android:backgroundTint="#1E1E2C"-->
+            <!--                android:background="#000"-->
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_rectangle_left_top"
+            android:clickable="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <!--            <soup.neumorphism.NeumorphCardView-->
+            <!--                style="@style/Widget.Neumorph.CardView"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="300dp"-->
+            <!--                android:padding="40dp"-->
+            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="parent"-->
+            <!--                app:neumorph_shadowElevation="15dp"-->
+            <!--                app:neumorph_shadowColorLight="@color/white"-->
+            <!--                app:neumorph_shadowColorDark="@color/white"-->
+            <!--                app:neumorph_shapeType="basin"-->
+            <!--                app:neumorph_shapeAppearance="@style/ShapeAppearance"-->
+            <!--                app:neumorph_backgroundColor="@color/white"-->
+            <!--                app:neumorph_strokeColor="@color/teal_200"-->
+            <!--                app:neumorph_strokeWidth="12dp"/>-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.38"
+                android:clipChildren="false"
+                >
+
+                <soup.neumorphism.NeumorphButton
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:id="@+id/btnTemperature"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:text="0.0"
+                    android:contentDescription="hwllo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btnHumidity"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:neumorph_backgroundColor="#1E1E2C"
+                    app:neumorph_shadowColorDark="#1E1E2C"
+                    app:neumorph_shadowColorLight="#73E6FF"
+                    app:neumorph_shapeAppearance="@style/ShapeAppearance"
+                    app:neumorph_shapeType="basin"
+                    app:neumorph_strokeWidth="12dp"
+                    tools:ignore="MissingConstraints"
+
+
+                    />
+                <!--                    app:neumorph_lightSource="leftTop|leftBottom|rightTop|rightBottom"-->
+
+                <soup.neumorphism.NeumorphButton
+                    android:textSize="13sp"
+                    android:id="@+id/btnHumidity"
+                    android:textColor="@color/white"
+                    android:layout_width="105dp"
+                    android:text="0.0"
+                    android:layout_height="105dp"
+                    android:contentDescription="hwllo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btnMotor"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btnTemperature"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:neumorph_backgroundColor="#1E1E2C"
+                    app:neumorph_shadowColorDark="#1E1E2C"
+                    app:neumorph_shadowColorLight="#73E6FF"
+                    app:neumorph_shapeAppearance="@style/ShapeAppearance"
+                    app:neumorph_shapeType="basin"
+                    app:neumorph_strokeWidth="12dp"
+                    tools:ignore="MissingConstraints" />
+
+                <soup.neumorphism.NeumorphButton
+                    android:id="@+id/btnMotor"
+                    android:textSize="13sp"
+                    android:textColor="@color/white"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:contentDescription="hwllo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btnHumidity"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:neumorph_backgroundColor="#1E1E2C"
+                    app:neumorph_shadowColorDark="#1E1E2C"
+                    app:neumorph_shadowColorLight="#73E6FF"
+                    app:neumorph_shapeAppearance="@style/ShapeAppearance"
+                    app:neumorph_shapeType="basin"
+                    android:text="off"
+                    app:neumorph_strokeWidth="12dp"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/txtTemperature"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:contentDescription="textview"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:text="TEMPERATURE"
+                    android:textAllCaps="true"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/btnTemperature"
+                    app:layout_constraintStart_toStartOf="@+id/btnTemperature"
+                    app:layout_constraintTop_toBottomOf="@+id/btnTemperature" />
+
+                <TextView
+                    android:id="@+id/txtHumidity"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:contentDescription="textview"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:text="HUMIDITY"
+                    android:textAllCaps="true"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/btnHumidity"
+                    app:layout_constraintStart_toStartOf="@+id/btnHumidity"
+                    app:layout_constraintTop_toBottomOf="@+id/btnHumidity" />
+
+                <TextView
+                    android:id="@+id/txtMotor"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:contentDescription="textview"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:text="MOTOR"
+                    android:textAllCaps="true"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/btnMotor"
+                    app:layout_constraintStart_toStartOf="@+id/btnMotor"
+                    app:layout_constraintTop_toBottomOf="@+id/btnMotor" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
