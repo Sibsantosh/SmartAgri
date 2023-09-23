@@ -2,20 +2,19 @@ package com.rexmo.smartagriculture.soilMoistureActivity
 
 import android.app.Dialog
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.ekn.gruzer.gaugelibrary.HalfGauge
 import com.ekn.gruzer.gaugelibrary.Range
-import com.google.firebase.database.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.rexmo.smartagriculture.R
 import com.rexmo.smartagriculture.databinding.ActivitySoilMoistureBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.launch
 
 class SoilMoisture : AppCompatActivity() {
     private lateinit var dRef: DatabaseReference
@@ -31,8 +30,9 @@ class SoilMoisture : AppCompatActivity() {
     private lateinit var halfGauge:HalfGauge
     private lateinit var binding:ActivitySoilMoistureBinding
     private val range = Range()
+
     //val btnBlk="#1E1E2C"
-    private val btnBlack: Int = Color.parseColor("#1E1E2C")
+    private val btnBlack: Int = Color.parseColor("#1E1E2D")
     private val rangeBlue: Int = Color.parseColor("#73E6FF")
 
 
@@ -181,7 +181,7 @@ class SoilMoisture : AppCompatActivity() {
             Toast.makeText(this, "success", Toast.LENGTH_SHORT).show()
             Off()
         }.addOnFailureListener {
-            Toast.makeText(this, "$it", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "${it.stackTrace}", Toast.LENGTH_SHORT).show()
         }
 
     }
